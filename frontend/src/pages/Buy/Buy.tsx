@@ -76,15 +76,12 @@ const Buy = () => {
             <S.InputRow>Spent: {buyResponse?.spent}</S.InputRow>
             <S.InputRow>Change:</S.InputRow>
             <S.InputRow>
-              <S.ChangeContainer>
-                {(buyResponse?.coins).map(
-                  (value, index) =>
-                    value > 0 && (
-                      <S.Change key={value}>
-                        {value} x {COINS[index]} cents
-                      </S.Change>
-                    ),
-                )}
+               <S.ChangeContainer>
+                {(buyResponse?.coins).map((value, index) => (
+                  <S.Change key={index}>
+                    {value} x {COINS[index]} cents
+                  </S.Change>
+                ))}
               </S.ChangeContainer>
             </S.InputRow>
           </>
